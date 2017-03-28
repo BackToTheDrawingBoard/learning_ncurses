@@ -1,0 +1,10 @@
+Create a window:
+	newwin(height, width, starty, startx)
+
+Destroy a window:
+	delwin(WINDOW *)
+
+Basic draw:
+	box(WINDOW *)
+	wrefresh(WINDOW *)
+

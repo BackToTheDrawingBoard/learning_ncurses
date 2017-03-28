@@ -1,0 +1,3 @@
+In the base of the source/ directory, I'm keeping a skeleton ncurses program
+to minimize the pain that I have to go through to create a new ncurses
+program.

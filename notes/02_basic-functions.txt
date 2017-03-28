@@ -1,0 +1,17 @@
+See source/ncurses_skeleton.c for basic init and closing functions.
+
+Attributes
+ - Possible with OR-ing a char with flags in addch, e.g.
+      addch(ch | A_BOLD | A_UNDERLINE);
+ - Use attrset(), attron(), arrtoff() with the attribute flags
+
+Capturing unbuffered input
+	Without somekind of action, stdin remains buffered, and will only report
+	keystrokes to programs upon encountering a newline or EOF character.
+	ncurses provides two functions to deal with this issue:
+ - raw()
+		raw() gives you all of the keyboard input in the terminal window,
+		even strokes like C-c, C-x, and the like, which would normally
+		generate signals.
+ - cbreak()
+ 		cbreak() essentially just unbuffers stdin, as I understand it.
