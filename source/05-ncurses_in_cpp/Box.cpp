@@ -1,5 +1,10 @@
 #include "Box.h"
 
+/**
+ * Remember, this is just a skeleton class, and should be implemented. Might
+ * add a pure virtual function just to be obnoxious about it.
+ */
+
 Box::Box() : 	
 		width(16), height(3), 
 		pos_x(0), pos_y(0), 
