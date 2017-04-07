@@ -22,6 +22,6 @@ public:
 
 protected:
 	WINDOW * window;
-	unsigned int width, height, pos_x, pos_y, cursor_row, cursor_height;
+	unsigned int width, height, pos_x, pos_y, cursor_x, cursor_y;
 	void cursor_reset();
 };

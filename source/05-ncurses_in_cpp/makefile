@@ -2,7 +2,7 @@ CC=g++
 CFLAGS=-c -Wall
 CLIBS=-lncurses
 
-SOURCES=main.cpp TextInput.cpp Box.cpp
+SOURCES=main.cpp TextInput.cpp Box.cpp ListBox.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=b.out
 

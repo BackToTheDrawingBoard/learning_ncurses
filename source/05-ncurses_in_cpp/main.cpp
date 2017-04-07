@@ -6,7 +6,7 @@
 
 #include <ncurses.h>
 #include "__05_static_strings.h"
-#include "TextInput.h"
+#include "ListBox.h"
 
 int main(int argc, char ** argv){
 	// Setup ncurses
@@ -21,15 +21,19 @@ int main(int argc, char ** argv){
 	refresh();
 	getch();
 
-	TextInput t = TextInput();
-	std::string s;
+	ListBox t = ListBox(10, 10, 0, 0);
+	ListBox t2 = ListBox(LINES - 10, 10, 10, 0);
+
+	t.add_string(std::string("One"));
+	t.add_string(std::string("Two"));
+	t.add_string(std::string("Three"));
 
 	t.refresh();
-	s = t.getLine();
+	t2.refresh();
+	getch();
 
-	mvprintw(LINES/2, (COLS-(sizeof(s.c_str())/sizeof(s.c_str()[0])))/2,
-		"%s\n", s.c_str());
-	refresh();
+	t.select(2, 1);
+	t.refresh();
 	getch();
 
 	// Exit ncurses
