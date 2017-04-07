@@ -18,7 +18,7 @@ public:
 	Box();
 	Box(unsigned int _y, unsigned int _x, unsigned int _pos_y, unsigned int _pos_x);
 	~Box();
-	void refresh();
+	virtual void refresh();
 
 protected:
 	WINDOW * window;

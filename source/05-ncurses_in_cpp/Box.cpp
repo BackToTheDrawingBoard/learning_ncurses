@@ -11,7 +11,7 @@ Box::Box() :
 		cursor_row(1), cursor_height(1)
 {
 	this->window = newwin(this->height, this->width, this->pos_y, this->pos_x);
-	wmove(this->window, 1, 1);
+	wmove(this->window, this->cursor_height, this->cursor_row);
 }
 
 Box::Box(unsigned int _y, unsigned int _x, unsigned int _pos_y, unsigned int _pos_x) :
@@ -20,7 +20,7 @@ Box::Box(unsigned int _y, unsigned int _x, unsigned int _pos_y, unsigned int _po
 		cursor_row(1), cursor_height(1)
 {
 	this->window = newwin(this->height, this->width, this->pos_y, this->pos_x);
-	wmove(this->window, 1, 1);
+	wmove(this->window, this->cursor_height, this->cursor_row);
 }
 
 Box::~Box () {
@@ -33,5 +33,7 @@ void Box::refresh() {
 }
 
 void Box::cursor_reset(){
-	wmove(this->window, 1, 1);
+	this->cursor_row = 1;
+	this->cursor_height = 1;
+	wmove(this->window, cursor_height, cursor_row);
 }

@@ -6,12 +6,18 @@
  *   File - ListBox.h
  */
 
-#include <ncurses.h>
+#include "Box.h"
 
-class ListBox
+#include <ncurses.h>
+#include <list>
+#include <string>
+
+class ListBox : public Box
 {
 public:
-	ListBox();
-	~ListBox();
-	
+	virtual void refresh();
+protected:
+	std::string leader;
+	std::list<std::string> entries;
+	void write_line(std::string);
 };
